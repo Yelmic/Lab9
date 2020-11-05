@@ -131,14 +131,19 @@ namespace lab9
             Console.WriteLine(str);
             StrUpgrade.Upgrade(str);
             Boss boss1 = new Boss(18);
+            Boss boss2 = new Boss(25);
             boss1.Upgrade += st => Console.WriteLine(st);
             boss1.TurnOn += st => Console.WriteLine(st);
+            boss2.Upgrade += st => Console.WriteLine(st);
+            boss2.TurnOn += st => Console.WriteLine(st);
+            boss1.Techvolt = 100;//пока не включили технику
+            boss1.Add(70);
+            boss1.On();//после включения
             boss1.Techvolt = 100;
             boss1.Add(70);
-            boss1.On();
-            boss1.Techvolt = 100;
-            boss1.Add(70);
-            boss1.Add(400);
+            boss2.On();//после включения
+            boss2.Techvolt = 90;
+            boss2.Add(400);
             Console.ReadLine();
         }
     }
